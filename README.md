@@ -1,8 +1,4 @@
-# TDD Project
-
-> # Ruby group capstone - Catalog of my things
-
-
+# Ruby group capstone - Catalog of my things
 
 ## Project screenshots
 
