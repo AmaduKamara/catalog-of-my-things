@@ -62,9 +62,14 @@ bundle install
 - [Twitter](https://twitter.com/DevAmkam)
 - [Facebook](https://www.facebook.com/amadus.kamara.7)
 
-👤 **Amadu Kamara (Amkam)**
+👤 **Ritta**
 
-👤 **Amadu Kamara (Amkam)**
+
+👤 **Evren Ersoy**
+
+- [LinkedIn](https://www.linkedin.com/in/ewoskyx/)
+- [GitHub](https://github.com/Ewoskyx)
+- [Twitter](https://twitter.com/Ewoskyx)
 
 ## 🤝 Contributing
 
