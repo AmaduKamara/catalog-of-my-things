@@ -1,18 +1,20 @@
 class Book < Item
   attr_accessor :publisher, :cover_state, :items
 
-  def initialize
+  def initialize(publisher:, cover_state:, publish_date:)
     @publisher = publisher
     @cover_state = cover_state
     @items = []
-    super
+    super(id: nil, publish_date: publish_date)
   end
 
   def add_item(publish_date, archived, label)
     Item.new(publish_date, archived, self, label)
   end
 
-  def can_be_archived?(item)
-    item.can_be_archived? == true || cover_state == 'bad'
+  private
+
+  def can_be_archived?
+    super || cover_state == 'bad'
   end
 end

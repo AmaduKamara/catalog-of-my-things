@@ -1,7 +1,8 @@
-class Label < Item
+class Label
   attr_accessor :title, :color, :items
 
-  def initialize(title, color)
+  def initialize(id:, title:, color:)
+    @id = id || Random.rand(1..500)
     @title = title
     @color = color
     @items = []
