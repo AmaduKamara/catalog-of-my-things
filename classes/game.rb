@@ -1,22 +1,19 @@
-require 'date'
-require './item.rb'
+require_relative 'item.rb'
 
 class Game < Item
-  attr_accessor :multiplayer, :last_played_at
+  attr_accessor :multiplayer, :last_played_at, :publish_date
 
-  initialize(multiplayer, last_played_at)
+  def initialize(multiplayer:, last_played_at:, publish_date:)
+    super(id: nil, publish_date: publish_date)
     @multiplayer = multiplayer
     @last_played_at = last_played_at
-    @can_be_archived = can_be_archived
   end
 
-  item = Item.new
-
+  private
+  
   def can_be_archived?
-    if item.can_be_archived && last_played_at > 2
-      true
-    else
-      false
-    end
+    current_year = Time.new.year
+    remaining_year = current_year - last_played_at
+    super() && (remaining_year > 2)
   end
 end
