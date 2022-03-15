@@ -1,22 +1,15 @@
-require_relative './item'
-
 class Author
-  attr_accessor :id, :first_name, :last_name
+  attr_accessor :first_name, :last_name, :items
 
-  def initialize(id, first_name, last_name)
-    # super(id:, publish_date:, archived: false)
-    @id = id
+  def initialize(id:, first_name:, last_name:)
+    @id = id || Random.rand(1..500)
     @first_name = first_name
     @last_name = last_name
     @items = []
   end
 
-  # item = Item.new()
-
-  # def add_item(item)
-  #   @items.push(item)
-  # end
+  def add_item(item)
+    @items.push(item)
+    item.author = self
+  end
 end
-
-new_author = Author.new(2, 'Samuel', 'Amkam')
-puts new_author.last_name
