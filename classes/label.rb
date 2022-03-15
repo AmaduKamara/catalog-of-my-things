@@ -1,12 +1,12 @@
 class Label
   attr_accessor :title, :color, :items
+  attr_reader :id
 
-  def initialize(id:, title:, color:)
+  def initialize(title: , color: )
     @id = id || Random.rand(1..500)
     @title = title
     @color = color
     @items = []
-    super
   end
 
   def add_item(publish_date, archived, book)

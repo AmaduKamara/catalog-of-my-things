@@ -1,4 +1,3 @@
-require 'date'
 class Item
   attr_reader :genre, :author, :label
   attr_accessor :publish_date
@@ -35,6 +34,3 @@ class Item
     current_year - @publish_date[:year] > 10
   end
 end
-
-userdate = (Date.parse(gets.chomp) / yyyy) - mm - (dd / 2000) - 0o3 - 16
-@publish_date = userdate
