@@ -1,5 +1,9 @@
 # Ruby group capstone - Catalog of my things
 
+In this project, we built a console app that helps keep record of 
+different types of things you won: books, music albums, movies, and games. 
+Everything implemented is based on the UML class diagram given in the project brief. 
+The data will be stored in JSON files for later access.
 ## Project screenshots
 
 ![screenshot(COMING SOON)]()
