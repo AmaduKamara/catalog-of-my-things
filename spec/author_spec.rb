@@ -4,7 +4,7 @@ require 'date'
 
 describe Author do
   context 'It should create an author' do
-    new_author = Author.new(first_name: 'Amadu', last_name: 'Kamara', id: 4)
+    new_author = Author.new(first_name: 'Amadu', last_name: 'Kamara')
     item = Item.new(id: 2, publish_date: Date.parse('2020/10/26'), archived: false)
     it 'should author\'s first name' do
       expect(new_author.first_name).to eq('Amadu')
