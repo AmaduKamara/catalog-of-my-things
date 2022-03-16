@@ -58,5 +58,7 @@ class App
   def save_data
     @handle_musicalbum.save_genres
     @handle_musicalbum.save_albums
+    @handle_game.save_games
+    @handle_game.save_authors
   end
 end

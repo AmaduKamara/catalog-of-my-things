@@ -5,8 +5,8 @@ require_relative 'author'
 
 class HandleGame
   def initialize
-    @games = []
-    @authors = []
+    @games = load_games
+    @authors = load_authors
   end
 
   # Create Game & Author
@@ -57,5 +57,44 @@ class HandleGame
       puts "\nFirst name: #{author.first_name}"
       puts "Last name: #{author.last_name}"
     end
+  end
+
+  # Load & Save Games to JSON
+  def load_games
+    if File.exist?('./json_data_files/games.json') && File.read('./json_data_files/games.json') != ''
+      JSON.parse(File.read('./json_data_files/games.json')).map do |game|
+        Game.new(multiplayer: game['multiplayer'], last_played_at: game['last_played_at'],
+                 publish_date: game['publish_date'])
+      end
+    else
+      []
+    end
+  end
+
+  def save_games
+    data = []
+    @games.each do |game|
+      data.push(multiplayer: game.multiplayer, publish_date: game.publish_date, last_played_at: game.last_played_at)
+    end
+    open('./json_data_files/games.json', 'w') { |f| f << JSON.pretty_generate(data) }
+  end
+
+  # Load & Save Albums to JSON
+  def load_authors
+    if File.exist?('./json_data_files/author.json') && File.read('./json_data_files/author.json') != ''
+      JSON.parse(File.read('./json_data_files/author.json')).map do |author|
+        Author.new(first_name: author['first_name'], last_name: author['last_name'])
+      end
+    else
+      []
+    end
+  end
+
+  def save_authors
+    data = []
+    @authors.each do |author|
+      data.push(first_name: author.first_name, last_name: author.last_name)
+    end
+    open('./json_data_files/author.json', 'w') { |f| f << JSON.pretty_generate(data) }
   end
 end
