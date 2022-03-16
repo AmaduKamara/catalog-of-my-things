@@ -5,7 +5,7 @@ require 'date'
 describe Genre do
   context 'It should create a genre' do
     newitem = Item.new(id: nil, publish_date: Date.parse('1999/10/26'))
-    genre = Genre.new(id: 1, name: 'Progressive Rock')
+    genre = Genre.new(name: 'Progressive Rock')
     it 'should create a new genre' do
       expect(genre.name).to eq 'Progressive Rock'
     end

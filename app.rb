@@ -1,11 +1,13 @@
 require './classes/handle_book'
 require './classes/handle_musicalbum'
+require './classes/handle_game'
 require 'colorize'
 
 class App
   def initialize
     @handle_book = HandleBooks.new
     @handle_musicalbum = HandleMusicAlbum.new
+    @handle_game = HandleGame.new
   end
 
   def menu
@@ -32,7 +34,7 @@ class App
     when 8
       @handle_musicalbum.create_music_album
     when 9
-      create game
+      @handle_game.create_game
     end
   end
 
@@ -43,13 +45,13 @@ class App
     when 2
       @handle_musicalbum.list_albums
     when 3
-      display_games
+      @handle_game.list_games
     when 4
       @handle_musicalbum.list_genres
     when 5
       @handle_book.display_labels
     when 6
-      display_authors
+      @handle_game.list_authors
     end
   end
 
