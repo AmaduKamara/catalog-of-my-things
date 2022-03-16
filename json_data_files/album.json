@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Metropolis",
+    "publish_date": "1999-10-26",
+    "spotify": true
+  },
+  {
+    "name": "Thriller",
+    "publish_date": "1982-11-30",
+    "spotify": true
+  }
+]
