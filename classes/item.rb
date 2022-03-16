@@ -14,8 +14,8 @@ class Item
   end
 
   def author=(author)
-    @autor = author
-    @autor.add_item(self) unless @autor.items.include?(self)
+    @author = author
+    @author.add_item(self) unless @author.items.include?(self)
   end
 
   def label=(label)
