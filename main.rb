@@ -1,4 +1,4 @@
-require './handle_book'
+require './classes/handle_book'
 
 @handle_book = HandleBooks.new
 
@@ -33,7 +33,7 @@ def choose_options(user_input)
   when 5
     display_genres
   when 6
-    display_labels
+    @handle_book.display_labels
   when 7
     display_authors
   when 8
