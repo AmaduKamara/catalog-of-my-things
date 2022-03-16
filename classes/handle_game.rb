@@ -63,7 +63,8 @@ class HandleGame
   def load_games
     if File.exist?('./json_data_files/games.json') && File.read('./json_data_files/games.json') != ''
       JSON.parse(File.read('./json_data_files/games.json')).map do |game|
-        Game.new(multiplayer: game['multiplayer'], last_played_at: game['last_played_at'], publish_date: game['publish_date'])
+        Game.new(multiplayer: game['multiplayer'], last_played_at: game['last_played_at'],
+                 publish_date: game['publish_date'])
       end
     else
       []
