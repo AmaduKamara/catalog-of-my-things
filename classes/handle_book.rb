@@ -22,7 +22,8 @@ class HandleBooks
     print 'color: '
     color = gets.chomp
 
-    book = Book.new(publisher: publisher, cover_state: cover_state, publish_date: publish_date, title: title, color: color)
+    book = Book.new(publisher: publisher, cover_state: cover_state, publish_date: publish_date, title: title,
+                    color: color)
     @books.push(book)
     puts 'Book created successfully'
   end
