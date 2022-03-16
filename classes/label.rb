@@ -9,7 +9,8 @@ class Label
     @items = []
   end
 
-  def add_item(publish_date, archived, book)
-    Item.new(publish_date, archived, book, self)
+  def add_item(item)
+    @items.push(item)
+    item.label = self
   end
 end
