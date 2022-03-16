@@ -58,8 +58,10 @@ bundle install
 - [Twitter](https://twitter.com/DevAmkam)
 - [Facebook](https://www.facebook.com/amadus.kamara.7)
 
-👤 **Ritta**
-
+👤 **Ritta Sweta**
+- [LinkedIn](https://www.linkedin.com/in/ritta-sweta/)
+- [GitHub](https://github.com/Buyaki01)
+- [Twitter](https://twitter.com/BuyakiRitta)
 
 👤 **Evren Ersoy**
 
