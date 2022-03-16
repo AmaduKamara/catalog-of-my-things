@@ -28,15 +28,19 @@ class HandleGame
     print 'Do you want to add author? [Y/N]: '
     perm = gets.chomp.downcase == 'y' || false
     if perm
-      puts 'Please, type the author first name '
-      first_name = gets.chomp
-      puts 'Please, type the author last name '
-      last_name = gets.chomp
-      @authors << Author.new(first_name: first_name, last_name: last_name)
-      puts 'Game and Author created successfully'
+      add_author
     else
       puts 'Game created successfully'
     end
+  end
+
+  def add_author
+    puts 'Please, type the author first name '
+    first_name = gets.chomp
+    puts 'Please, type the author last name '
+    last_name = gets.chomp
+    @authors << Author.new(first_name: first_name, last_name: last_name)
+    puts 'Game and Author created successfully'
   end
 
   # List Games and Authors
@@ -54,42 +58,4 @@ class HandleGame
       puts "Last name: #{author.last_name}"
     end
   end
-
-  # # Load & Save Genres to JSON
-  # def load_genres
-  #   if File.exist?('./json_data_files/genre.json') && File.read('./json_data_files/genre.json') != ''
-  #     JSON.parse(File.read('./json_data_files/genre.json')).map do |genre|
-  #       Genre.new(name: genre['name'])
-  #     end
-  #   else
-  #     []
-  #   end
-  # end
-
-  # def save_genres
-  #   data = []
-  #   @genres.each do |genre|
-  #     data.push({ name: genre.name })
-  #   end
-  #   open('./json_data_files/genre.json', 'w') { |f| f << JSON.pretty_generate(data) }
-  # end
-
-  # # Load & Save Albums to JSON
-  # def load_albums
-  #   if File.exist?('./json_data_files/album.json') && File.read('./json_data_files/album.json') != ''
-  #     JSON.parse(File.read('./json_data_files/album.json')).map do |album|
-  #       MusicAlbum.new(name: album['name'], publish_date: album['publish_date'], on_spotify: album['spotify'])
-  #     end
-  #   else
-  #     []
-  #   end
-  # end
-
-  # def save_albums
-  #   data = []
-  #   @albums.each do |album|
-  #     data.push({ name: album.name, publish_date: album.publish_date, spotify: album.on_spotify })
-  #   end
-  #   open('./json_data_files/album.json', 'w') { |f| f << JSON.pretty_generate(data) }
-  # end
 end
