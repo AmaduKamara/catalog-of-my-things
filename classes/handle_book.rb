@@ -1,4 +1,5 @@
-require './book'
+require 'date'
+require './classes/book'
 
 class HandleBooks
   def initialize
@@ -12,10 +13,10 @@ class HandleBooks
     print 'Cover State: '
     cover_state = gets.chomp
 
-    print 'Publish Date: '
-    publish_date = gets.chomp
+    print 'Publish Date yy-mm-dd: '
+    publish_date = Date.parse(gets.chomp)
 
-    book = Book.new(publisher, cover_state, publish_date)
+    book = Book.new(publisher: publisher, cover_state: cover_state, publish_date: publish_date)
     @books.push(book)
     puts 'Book created successfully'
   end

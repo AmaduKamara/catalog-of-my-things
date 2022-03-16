@@ -18,6 +18,8 @@ def menu
   puts '12 - Exit'
 end
 
+# rubocop:disable Metrics/CyclomaticComplexity
+# rubocop:disable Metrics/MethodLength
 def choose_options(user_input)
   case user_input
   when 1
@@ -44,9 +46,11 @@ def choose_options(user_input)
     create game
   end
 end
+# rubocop:enable Metrics/CyclomaticComplexity
+# rubocop:enable Metrics/MethodLength
 
 def main()
-  puts 'Welcome to school library App'
+  puts 'Welcome to our App'
   is_working = true
   while is_working == true
     menu
