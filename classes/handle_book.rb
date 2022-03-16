@@ -1,9 +1,11 @@
 require 'date'
 require './classes/book'
+require './classes/label'
 
 class HandleBooks
   def initialize
     @books = []
+    @labels = []
   end
 
   def create_book
@@ -22,10 +24,11 @@ class HandleBooks
     print 'color: '
     color = gets.chomp
 
-    book = Book.new(publisher: publisher, cover_state: cover_state, publish_date: publish_date, title: title,
-                    color: color)
+    book = Book.new(publisher: publisher, cover_state: cover_state, publish_date: publish_date)
+    label = Label.new(title: title, color: color)
     @books.push(book)
-    puts 'Book created successfully'
+    @labels.push(label)
+    puts 'Book and Label created successfully'
   end
 
   def display_books
@@ -37,9 +40,9 @@ class HandleBooks
   end
 
   def display_labels
-    @books.each do |book|
-      puts "Title: #{book.title}"
-      puts "Color: #{book.color}"
+    @labels.each do |label|
+      puts "Title: #{label.title}"
+      puts "Color: #{label.color}"
     end
   end
 end
