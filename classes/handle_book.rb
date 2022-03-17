@@ -4,8 +4,8 @@ require './classes/label'
 
 class HandleBooks
   def initialize
-    @books = []
-    @labels = []
+    @books = load_books
+    @labels = load_labels
   end
 
   def create_book
@@ -44,5 +44,43 @@ class HandleBooks
       puts "Title: #{label.title}"
       puts "Color: #{label.color}"
     end
+  end
+
+  # Load & Save labels to JSON
+  def load_labels
+    if File.exist?('./json_data_files/label.json') && File.read('./json_data_files/label.json') != ''
+      JSON.parse(File.read('./json_data_files/label.json')).map do |label|
+        Label.new(title: label['title'], color: label['color'])
+      end
+    else
+      []
+    end
+  end
+
+  def save_labels
+    data = []
+    @labels.each do |label|
+      data.push({ title: label.title, color: label.color })
+    end
+    open('./json_data_files/label.json', 'w') { |f| f << JSON.pretty_generate(data) }
+  end
+
+  # Load & Save Books to JSON
+  def load_books
+    if File.exist?('./json_data_files/book.json') && File.read('./json_data_files/book.json') != ''
+      JSON.parse(File.read('./json_data_files/book.json')).map do |book|
+        Book.new(publisher: book['publisher'], cover_state: book['cover_state'], publish_date: book['publish_date'])
+      end
+    else
+      []
+    end
+  end
+
+  def save_books
+    data = []
+    @books.each do |book|
+      data.push({ publisher: book.publisher, cover_state: book.cover_state, publish_date: book.publish_date })
+    end
+    open('./json_data_files/book.json', 'w') { |f| f << JSON.pretty_generate(data) }
   end
 end

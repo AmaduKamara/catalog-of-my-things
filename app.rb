@@ -60,5 +60,7 @@ class App
     @handle_musicalbum.save_albums
     @handle_game.save_games
     @handle_game.save_authors
+    @handle_book.save_labels
+    @handle_book.save_books
   end
 end
