@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require './app'
 
 class Main
@@ -6,7 +7,7 @@ class Main
   end
 
   def run
-    puts '**********   Welcome to our App   ***********'.black.on_white.bold
+    puts '***   Welcome to Catalog of Things App   ****'.black.on_white.bold
     is_working = true
     while is_working == true
       @app.menu
