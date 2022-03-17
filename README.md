@@ -6,6 +6,9 @@ Everything implemented is based on the UML class diagram given in the project br
 The data will be stored in JSON files for later access.
 ## Project screenshots
 
+![image](https://user-images.githubusercontent.com/50941074/158835574-dc4f106f-57ee-4f44-b2e5-63b6654b7b20.png)
+
+
 [Live Devmo Video](https://drive.google.com/file/d/1nbkdVEFj9E-vQU-Dtz_fmKpOLj41TSKa/view)
 
 Additional description about the project and its features.
