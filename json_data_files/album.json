@@ -8,5 +8,10 @@
     "name": "Thriller",
     "publish_date": "1982-11-30",
     "spotify": true
+  },
+  {
+    "name": "Make It",
+    "publish_date": "2019-04-05",
+    "spotify": true
   }
 ]

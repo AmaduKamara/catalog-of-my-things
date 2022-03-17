@@ -18,7 +18,7 @@ class HandleGame
     publish_date = Date.parse(gets.chomp)
     return unless publish_date
 
-    print 'When was the game last played? '
+    print 'When was the game last played? [Enter date in format (yyyy-mm-dd)]:'
     last_played_at = Date.parse(gets.chomp)
     return unless last_played_at
 

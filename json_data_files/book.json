@@ -3,5 +3,10 @@
     "publisher": "mypublisher",
     "cover_state": "new",
     "publish_date": "2008-09-07"
+  },
+  {
+    "publisher": "Amkam Inc",
+    "cover_state": "Amkam",
+    "publish_date": "2019-02-04"
   }
 ]
